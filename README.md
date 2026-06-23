@@ -65,3 +65,17 @@ Este repositorio contiene la resolución del ejercicio práctico centrado en la 
 ## Reflexión Teórica: Gestión de Datos y Migraciones
 
 Las configuraciones personalizadas en `admin.py` (como `list_display` y `search_fields`) facilitan exponencialmente la gestión de datos porque transforman los registros brutos de la base de datos en una interfaz visual e interactiva. Permiten a los administradores localizar y filtrar información en tiempo real sin necesidad de escribir sentencias SQL manuales. Por otro lado, las migraciones mantienen la base de datos sincronizada actuando como un sistema de control de versiones estructural; escanean los modelos de Python, detectan los cambios lógicos y generan automáticamente las instrucciones precisas para alterar las tablas físicas de forma segura y predecible.
+
+## Despliegue y Rollback de Base de Datos
+
+En entornos de producción, la sincronización de la base de datos debe manejarse con precaución.
+
+* **Despliegue (Migrar hacia adelante):**
+  Para aplicar los últimos cambios estructurales al servidor de producción, ejecute:
+  `python manage.py migrate`
+
+* **Rollback (Revertir migraciones):**
+  Si una actualización corrompe el sistema y es necesario volver a un estado anterior seguro, identifique el número de migración previa (ej. `0001_initial`) y ejecute:
+  `python manage.py migrate nombre_de_la_app 0001`
+  Para vaciar completamente las tablas de una app:
+  `python manage.py migrate nombre_de_la_app zero`
