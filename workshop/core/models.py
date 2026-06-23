@@ -2,6 +2,14 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 
+class Categoria(models.Model):
+    """Modelo para categorizar los documentales del catálogo."""
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre
+
 class Documental(models.Model):
     """Modelo que representa un documental dentro del catálogo general del proyecto."""
     titulo = models.CharField(
@@ -14,7 +22,7 @@ class Documental(models.Model):
         verbose_name="Temática principal",
         help_text="Categoría o género del documental (ej: Deportes, Historia)."
     )
-    anio_estreno = models.IntegerField(
+    anio_estreno = models.PositiveIntegerField(
         verbose_name="Año de estreno",
         help_text="Año en el que la producción fue lanzada oficialmente."
     )
