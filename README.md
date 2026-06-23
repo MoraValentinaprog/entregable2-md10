@@ -94,3 +94,24 @@ Para inicializar este proyecto desde cero en un entorno local y asegurar su corr
    ```bash
    python -m venv env
    env\Scripts\activate
+
+# Proyecto Web Django - Sistema de Blog y Catálogo
+
+## Descripción
+Plataforma web desarrollada con el framework Django que integra un sistema completo de Blog y un catálogo de Documentales interactivo. El proyecto destaca por la implementación de una arquitectura limpia en el frontend (herencia de plantillas) y el uso de Vistas Basadas en Clases (CBVs) para la gestión del CRUD.
+
+## Características Técnicas
+* **Diseño Modular (Frontend):** Uso de plantillas maestras (`base.html`) y configuración de archivos estáticos (CSS/JS) bajo el estándar de Django.
+* **Sistema CRUD Completo:** Vistas genéricas (`ListView`, `DetailView`, `CreateView`, `UpdateView`, `DeleteView`) para gestionar las publicaciones del blog de forma dinámica.
+* **Bases de Datos y ORM:** Modelos relacionales complejos (Autores, Etiquetas, Publicaciones) utilizando relaciones `ForeignKey` y `ManyToManyField`.
+* **Seguridad y Validaciones:** Implementación del método `clean()` a nivel de modelo para garantizar la integridad de los datos ingresados en los formularios.
+
+## Instrucciones de Ejecución Local
+Para levantar este proyecto en tu propia computadora, seguí estos pasos:
+
+1. Cloná este repositorio.
+2. Activá tu entorno virtual.
+3. Instalá las dependencias (si aplica): `pip install -r requirements.txt`
+4. Ejecutá las migraciones de la base de datos: `python manage.py migrate`
+5. Iniciá el servidor de desarrollo local: `python manage.py runserver`
+6. Accedé a la aplicación desde tu navegador en `http://127.0.0.1:8000/`
