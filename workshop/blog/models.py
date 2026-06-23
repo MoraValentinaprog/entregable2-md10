@@ -79,7 +79,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """Retorna la URL canónica para visualizar esta publicación en detalle."""
-        return reverse('post_detalle', args=[str(self.id)])
+        return reverse('post_detail', args=[str(self.id)])
 
     def clean(self):
         """Validación personalizada a nivel de modelo para el título de la publicación."""

@@ -1,0 +1,6 @@
+<h1>{{ object.title }}</h1>
+<p><b>Autor:</b> {{ object.author }}</p>
+<p><b>Fecha:</b> {{ object.published_date }}</p>
+<p>{{ object.content }}</p>
+<hr>
+<a href="{% url 'post_list' %}">Volver al inicio</a>

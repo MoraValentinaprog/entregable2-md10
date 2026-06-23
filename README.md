@@ -79,3 +79,10 @@ En entornos de producción, la sincronización de la base de datos debe manejars
   `python manage.py migrate nombre_de_la_app 0001`
   Para vaciar completamente las tablas de una app:
   `python manage.py migrate nombre_de_la_app zero`
+
+## Vistas CRUD y Seguridad
+
+Se implementó el ciclo completo de gestión de datos (CRUD) para el modelo `Post` utilizando Vistas Basadas en Clases (CBV) de Django.
+* **Lectura:** Implementación de `ListView` y `DetailView` para la visualización pública del catálogo de artículos.
+* **Escritura y Modificación:** Uso de `CreateView`, `UpdateView` y `DeleteView` para la gestión de contenido.
+* **Seguridad:** Se aplicó el mixin `LoginRequiredMixin` para restringir el acceso a las vistas de modificación exclusivamente a usuarios autenticados, protegiendo la integridad de la base de datos.
