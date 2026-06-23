@@ -86,3 +86,11 @@ Se implementó el ciclo completo de gestión de datos (CRUD) para el modelo `Pos
 * **Lectura:** Implementación de `ListView` y `DetailView` para la visualización pública del catálogo de artículos.
 * **Escritura y Modificación:** Uso de `CreateView`, `UpdateView` y `DeleteView` para la gestión de contenido.
 * **Seguridad:** Se aplicó el mixin `LoginRequiredMixin` para restringir el acceso a las vistas de modificación exclusivamente a usuarios autenticados, protegiendo la integridad de la base de datos.
+
+## Guía de Despliegue Local (Deployment)
+Para inicializar este proyecto desde cero en un entorno local y asegurar su correcto funcionamiento, ejecute estrictamente los siguientes comandos en la terminal de la raíz del proyecto:
+
+1. **Crear y activar el entorno virtual:**
+   ```bash
+   python -m venv env
+   env\Scripts\activate
