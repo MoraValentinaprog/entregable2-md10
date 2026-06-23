@@ -50,3 +50,18 @@ Este repositorio contiene la resolución final de las prácticas de desarrollo w
 5. Iniciar el servidor: `python manage.py runserver`
 
 ---
+## EJERCICIO MD 4
+# Panel de Administración y Migraciones en Django
+
+Este repositorio contiene la resolución del ejercicio práctico centrado en la configuración avanzada de la interfaz de administración y la sincronización de la base de datos a través de migraciones en Django.
+
+## Funcionalidades Implementadas
+
+* **Sincronización de Base de Datos:** Ejecución de `makemigrations` y `migrate` para reflejar la estructura relacional de los modelos (Author, Tag, Post) en las tablas físicas.
+* **Gestión de Autores:** Panel configurado con `list_display` (Nombre, Email) y `search_fields` para facilitar la búsqueda de usuarios por credenciales.
+* **Gestión de Etiquetas:** Interfaz administrativa simplificada para la categorización temática.
+* **Gestión de Publicaciones (Posts):** Panel avanzado con `list_display` (Título, Autor, Fecha), `list_filter` (Fecha, Autor) y `search_fields` (Título, Contenido y Nombre del Autor), integrando navegación jerárquica por fechas y selección horizontal de etiquetas.
+
+## Reflexión Teórica: Gestión de Datos y Migraciones
+
+Las configuraciones personalizadas en `admin.py` (como `list_display` y `search_fields`) facilitan exponencialmente la gestión de datos porque transforman los registros brutos de la base de datos en una interfaz visual e interactiva. Permiten a los administradores localizar y filtrar información en tiempo real sin necesidad de escribir sentencias SQL manuales. Por otro lado, las migraciones mantienen la base de datos sincronizada actuando como un sistema de control de versiones estructural; escanean los modelos de Python, detectan los cambios lógicos y generan automáticamente las instrucciones precisas para alterar las tablas físicas de forma segura y predecible.
